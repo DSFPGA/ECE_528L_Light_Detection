@@ -111,9 +111,11 @@ Another issue with this lab was encountered during the completion of the task. W
 ## Postlab
 
 1. What would happen to the shape of the SCL and SDA signals if the values of the pull-up resistors were significantly increased?
+
 If the value of the pull up resistors were increased, the capacitors will need a longer time to charge which increases the length of the rise time for these signals. This can cause the SCL and SDA signals to take longer to change states which could potentially lead to loss of data or corrupted data [4].
 
 2. How can multiple peripheral devices use the same I2C bus? How does the main I2C controller know when to transmit or receive data from the peripheral device?
+
 In I2C, there can be a master with multiple slave devices. The master will send a start condition via the SDA line to every slave device which will inform the slave devices to be ready to receive data. The master will then send an address to all of the slave devices. The slave device that is mapped to that address will respond to the master address that it is either ready or not ready to begin the process of transmitting or receiving. Essentially, multiple slave devices can exist on the same I2C bus because the master will only transmit to or receive data from a slave device tied to a specific address [5].
 
 3. What are some advantages and disadvantages of using I2C? List at least three reasons for each.
