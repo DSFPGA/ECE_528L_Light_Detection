@@ -34,7 +34,7 @@ lux = 0.01 * (2 ^ (E[3:0])) * R[11:0]
 
 2. What possible I2C addresses can be used by the OPT3001 Ambient Light Sensor? In a table, list the addresses in hexadecimal format and provide each pin connection. Refer to the OPT3001 Datasheet in the Serial Bus Address Section (7.3.4.1).
 
-[2]
+Table 1. Table for Prelab Question 2 [2]
 | DEVICE I2C ADDRESS | ADDR PIN |
 | ------------------ | -------- |
 | 0x44               | GND      |
@@ -88,6 +88,7 @@ With the completion of the procedure section, the final half of the lab report i
 
 If the measured lux value is equal to or above the threshold, then the function calculates how much is received compared to the maximum value as a percentage. For ease of calculations, the maximum lux threshold has been set to 83,000. The measured lux is divided by the maximum lux threshold and is multiplied by 100 to calculate the percentage. Based on the percentage, there are six types of duty cycles that the robot will use. The following table displays the entire range set for duty cycles based on the percentage value. The calculated lux percentage is defiend as x in the table. To calculate the duty cycle, the maximum duty cycle is multiplied by a ratio which is then fed into the Motor_Forward function. The highest ratio is 0.6 to ensure that the motors are never given a duty cycle greater than 70%. For each duty cycle, the LED2 is set to a specific color to indicate what speed the motors are moving at. The proof of the lab is shown in a video at the link below. 
 
+Table 2. Lux to Duty Cycle Map for Task
 | Lux Percentage | Duty Cycle Percentage | LED2 Color |
 | -------------- | --------------------- | ---------- |
 | x < 25%        | 10%                   | BLUE       |
